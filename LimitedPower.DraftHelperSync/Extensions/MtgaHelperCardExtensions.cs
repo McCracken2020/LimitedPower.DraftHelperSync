@@ -9,7 +9,7 @@ namespace LimitedPower.DraftHelperSync.Extensions
         public static MtgaHelperEvaluation GetCard(this List<MtgaHelperEvaluation> mtgaHelperCards, string cardName, string set)
         {
             var mtgaHelperCard = mtgaHelperCards.FirstOrDefault(m =>
-                m.Card.Name == cardName && m.Card.Set.ToUpper() == set.ToUpper());
+                m.Card.Name.ToUpper() == cardName.ToUpper() && m.Card.Set.ToUpper() == set.ToUpper());
 
             // alchemy cards fix
             if(mtgaHelperCard == null)
